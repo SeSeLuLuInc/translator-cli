@@ -2,12 +2,8 @@ package xyz.puppet57;
 
 import java.util.Objects;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
         java.util.Scanner myObj = new java.util.Scanner(System.in);  // Create a Scanner object
         System.out.print("Se Se Lu Lu to english [E] or english to Se Se Lu Lu [S]?: ");
 
@@ -16,16 +12,22 @@ public class Main {
         String EtoSorStoE = myObj.nextLine();  // Read user input
         int Lang = 1;
 
-        if (Objects.equals(EtoSorStoE, "E")) {
+        if (Objects.equals(EtoSorStoE.toLowerCase(), "e")) {
             System.out.print("Type your Se Se Lu Lu: ");
-        } else if (Objects.equals(EtoSorStoE, "S")) {
+        } else if (Objects.equals(EtoSorStoE.toLowerCase(), "s")) {
             System.out.print("Type your English: ");
             Lang = 2;
         }
 
-        // String Sentence = myObj.nextLine();
+        String Sentence = myObj.nextLine();
+        String ConvertedSentence;
 
-        // The replacement logic will go here
-        // Lncvrt will probably make the replacement logic
+        if (Lang == 1) {
+            ConvertedSentence = Translator.ConvertFrom(Sentence);
+        } else {
+            ConvertedSentence = Translator.ConvertTo(Sentence);
+        }
+
+        System.out.println("Converted sentence: " + ConvertedSentence);
     }
 }
