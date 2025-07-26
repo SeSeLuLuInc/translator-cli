@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'xyz.lncvrt.seselulu'
-version = '1.0.0'
+version = '1.0.1'
 
 jar {
     manifest {

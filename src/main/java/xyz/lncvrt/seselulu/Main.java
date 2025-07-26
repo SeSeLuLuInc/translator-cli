@@ -4,30 +4,31 @@ import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
-        java.util.Scanner myObj = new java.util.Scanner(System.in);  // Create a Scanner object
+        java.util.Scanner inputReader = new java.util.Scanner(System.in);
         System.out.print("Se Se Lu Lu to english [E] or english to Se Se Lu Lu [S]?: ");
 
-        // The variable name means English to Se Se Lu Lu or Se Se Lu Lu to English
-        // I didn't know what else to name it
-        String EtoSorStoE = myObj.nextLine();  // Read user input
-        int Lang = 1;
+        String inputMode = inputReader.nextLine();
 
-        if (Objects.equals(EtoSorStoE.toLowerCase(), "e")) {
+        int lang = 1;
+        if (Objects.equals(inputMode.toLowerCase(), "e")) {
             System.out.print("Type your Se Se Lu Lu: ");
-        } else if (Objects.equals(EtoSorStoE.toLowerCase(), "s")) {
+        } else if (Objects.equals(inputMode.toLowerCase(), "s")) {
             System.out.print("Type your English: ");
-            Lang = 2;
-        }
-
-        String Sentence = myObj.nextLine();
-        String ConvertedSentence;
-
-        if (Lang == 1) {
-            ConvertedSentence = Translator.ConvertFrom(Sentence);
+            lang = 2;
         } else {
-            ConvertedSentence = Translator.ConvertTo(Sentence);
+            System.out.print("Invalid mode");
+            return;
         }
 
-        System.out.println("Converted sentence: " + ConvertedSentence);
+        String inputSentence = inputReader.nextLine();
+
+        String convertedSentence;
+        if (lang == 1) {
+            convertedSentence = Translator.convertFrom(inputSentence);
+        } else {
+            convertedSentence = Translator.convertTo(inputSentence);
+        }
+
+        System.out.println("Converted sentence: " + convertedSentence);
     }
 }
