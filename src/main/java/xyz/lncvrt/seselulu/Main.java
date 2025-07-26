@@ -1,4 +1,4 @@
-package xyz.puppet57;
+package xyz.lncvrt.seselulu;
 
 import java.util.Objects;
 

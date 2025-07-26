@@ -1,4 +1,4 @@
-package xyz.puppet57;
+package xyz.lncvrt.seselulu;
 
 public class Translator {
     public static String ConvertTo(String input) {
